@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
-import _thread
 import time
+import _thread
 
 
 # 为线程定义一个函数
@@ -17,7 +16,6 @@ def print_time(threadName, delay):
 try:
     _thread.start_new_thread(print_time, ("Thread-1", 2,))
     _thread.start_new_thread(print_time, ("Thread-2", 4,))
-    print(_thread.ne)
 except:
     print("Error: 无法启动线程")
 
