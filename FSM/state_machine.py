@@ -9,18 +9,18 @@ class StateMachine:
         self.endStates = []  # 最终状态集合
 
     # 参数name为状态名,handler为状态转移函数,end_state表明是否为最终状态
-    def add_state(self, name, handler, end_state=0):
+    def add_state(self, name, handler, end_state=0):  # 进行添加状态：状态名和对应的状态方法
         name = name.upper()  # 转换为大写
-        self.handlers[name] = handler
+        self.handlers[name] = handler  # 得到所有的状态转移函数
         if end_state:
             self.endStates.append(name)
 
-    def set_start(self, name):
+    def set_start(self, name):   # 设置开始的名字
         self.startState = name.upper()
 
     def run(self, cargo):
         try:
-            handler = self.handlers[self.startState]
+            handler = self.handlers[self.startState]  # 通过方法的名字获取方法
         except:
             print("must call .set_start() before .run()")
         if not self.endStates:
