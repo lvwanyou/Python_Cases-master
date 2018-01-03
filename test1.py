@@ -4,6 +4,7 @@
 #     print(numbers[index])
 
 #coding :utf-8
+# coding :utf-8
 
 list(range(10))
 
